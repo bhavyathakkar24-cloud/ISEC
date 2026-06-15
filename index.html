@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISEC | Indian Students' Empowerment Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#0F172A;
+    --royal:#2563EB;
+    --gold:#F59E0B;
+    --white:#FFFFFF;
+    --black:#000000;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--white);
+    color:var(--black);
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(12px);
+    z-index:999;
+    transition:0.3s;
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+    background:
+    linear-gradient(
+    rgba(15,23,42,.82),
+    rgba(15,23,42,.92)),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:850px;
+    color:white;
+}
+
+.tag{
+    display:inline-block;
+    background:var(--gold);
+    color:black;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:5rem;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    opacity:0.9;
+    max-width:700px;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
+
+.btn-primary{
+    background:var(--royal);
+    color:white;
+    text-decoration:none;
+    padding:16px 30px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    padding:16px 30px;
+    border-radius:10px;
+}
+
+/* SECTION */
+
+.section{
+    padding:110px 10%;
+}
+
+.section-title{
+    font-size:3rem;
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.section-sub{
+    max-width:850px;
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#555;
+}
+
+/* ISEC UNIVERSE */
+
+.dark{
+    background:var(--navy);
+}
+
+.dark .section-title{
+    color:white;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    transition:.35s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:var(--navy);
+}
+
+.card p{
+    color:#666;
+}
+
+/* STATS */
+
+.stats{
+    padding:100px 10%;
+    background:#F8FAFC;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    font-size:3.5rem;
+    color:var(--royal);
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:#555;
+}
+
+/* TEAM */
+
+.team-card{
+    text-align:center;
+}
+
+.team-img{
+    width:100px;
+    height:100px;
+    background:var(--royal);
+    border-radius:50%;
+    margin:0 auto 20px;
+}
+
+.team-card h3{
+    color:var(--navy);
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,var(--royal),#1E40AF);
+    color:white;
+    text-align:center;
+    padding:120px 10%;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+footer p{
+    margin-top:10px;
+    opacity:0.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+nav ul{
+    display:none;
+}
+
+.section-title{
+    font-size:2.2rem;
+}
+
+.cta h2{
+    font-size:2.2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">ISEC</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#universe">Activities</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#join">Join</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<span class="tag">
+Indian Students' Empowerment Community
+</span>
+
+<h1>
+Empowering Students.<br>
+Creating Leaders.<br>
+Building India's Future.
+</h1>
+
+<p>
+A youth-driven community helping students develop leadership,
+communication, diplomacy, critical thinking and confidence through
+debates, Model United Nations conferences, youth parliaments,
+leadership programs and skill development initiatives.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn-primary">
+Learn More
+</a>
+
+<a href="#join" class="btn-secondary">
+Join ISEC
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<h2 class="section-title">
+About ISEC
+</h2>
+
+<p class="section-sub">
+ISEC is a student-led initiative dedicated to creating meaningful
+opportunities for young minds across India. Through debates,
+Model United Nations conferences, leadership summits,
+public speaking workshops and collaborative learning experiences,
+ISEC empowers students to discover their voice, strengthen their abilities
+and prepare for the future with confidence.
+</p>
+
+</section>
+
+<section id="universe" class="section dark">
+
+<h2 class="section-title">
+The ISEC Universe
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎤 The Voice of Change</h3>
+<p>Debate Competitions</p>
+</div>
+
+<div class="card">
+<h3>🌍 The Diplomat</h3>
+<p>Model United Nations</p>
+</div>
+
+<div class="card">
+<h3>🏛 The Legislator</h3>
+<p>Youth Parliament</p>
+</div>
+
+<div class="card">
+<h3>🚀 The Innovator</h3>
+<p>Skill Development Programs</p>
+</div>
+
+<div class="card">
+<h3>⭐ The Leader</h3>
+<p>Leadership Summits</p>
+</div>
+
+<div class="card">
+<h3>🤝 The Changemaker</h3>
+<p>Social Awareness Campaigns</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>100+</h2>
+<p>Students Engaged</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>Events Planned</p>
+</div>
+
+<div class="stat">
+<h2>5+</h2>
+<p>Institutional Collaborations</p>
+</div>
+
+<div class="stat">
+<h2>1</h2>
+<p>Vision</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="team" class="section">
+
+<h2 class="section-title">
+Founding Team
+</h2>
+
+<div class="cards">
+
+<div class="card team-card">
+<div class="team-img"></div>
+<h3>Jesal Purohit</h3>
+</div>
+
+<div class="card team-card">
+<div class="team-img"></div>
+<h3>Bhavya Thakkar</h3>
+</div>
+
+<div class="card team-card">
+<div class="team-img"></div>
+<h3>Krish Majmudar</h3>
+</div>
+
+<div class="card team-card">
+<div class="team-img"></div>
+<h3>Dhairya Rahevar</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="join" class="cta">
+
+<h2>
+Join The Movement
+</h2>
+
+<p>
+The future belongs to those who are prepared to lead. Join a growing
+community of ambitious students committed to learning, leading and
+creating meaningful impact.
+</p>
+
+<a href="mailto:contact@isecindia.org" class="btn-primary">
+Contact ISEC
+</a>
+
+</section>
+
+<footer>
+
+<h3>ISEC</h3>
+
+<p>
+Indian Students' Empowerment Community
+</p>
+
+<p>
+© 2026 ISEC. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+window.addEventListener("scroll", () => {
+
+const nav = document.querySelector("nav");
+
+if(window.scrollY > 50){
+nav.style.background = "rgba(11,18,32,0.98)";
+}
+else{
+nav.style.background = "rgba(15,23,42,0.95)";
+}
+
+});
+
+</script>
+
+</body>
+</html>
